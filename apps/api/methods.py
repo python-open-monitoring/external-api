@@ -208,7 +208,7 @@ def monitor_activity(request, validated_data):
         return {"error": "Monitor has not been found. Please input ID."}
 
     monitor_activities = []
-    for monitor_activity in MonitorActivity.objects.filter(monitor_id=monitor_id).order_by('-id')[:30]:
+    for monitor_activity in MonitorActivity.objects.filter(monitor_id=monitor_id).order_by('id')[:30]:
         d = {}
         d["monitor_activity_id"] = str(monitor_activity.id)
         d["monitor_id"] = str(monitor_activity.monitor_id)
